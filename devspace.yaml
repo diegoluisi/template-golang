@@ -3,11 +3,11 @@ version: v1beta11
 # `vars` specifies variables which may be used as ${VAR_NAME} in devspace.yaml
 vars:
 - name: IMAGE
-  value: diegoluisi/hello-gitops:latest
+  value: diegoluisi/${{values.component_id}}:latest
 
 # `deployments` tells DevSpace how to deploy this project
 deployments:
-- name: hello-gitops
+- name: ${{values.component_id}}
   # This deployment uses `kubectl` but you can also define `helm` deployments
   kubectl:
     manifests:

@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-gitops
+  name: ${{values.component_id}}
   labels:
-    app: hello-gitops
+    app: ${{values.component_id}}
     component: web
 spec:
   selector:
     matchLabels:
-      app: hello-gitops
+      app: ${{values.component_id}}
       component: web
   template:
     metadata:
       labels:
-        app: hello-gitops
+        app: ${{values.component_id}}
         component: web
     spec:
       containers:
-      - name: hello-gitops
-        image: diegoluisi/hello-gitops:latest
+      - name: ${{values.component_id}}
+        image: diegoluisi/${{values.component_id}}:latest
         ports:
         - containerPort: 8000
         resources:

@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: hello-gitops
+  name: ${{values.component_id}}
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
@@ -12,6 +12,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: hello-gitops
+            name: ${{values.component_id}}
             port:
               number: 80

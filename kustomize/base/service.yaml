@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-gitops
+  name: ${{values.component_id}}
   labels:
-    app: hello-gitops
+    app: ${{values.component_id}}
 spec:
   type: ClusterIP
   ports:
@@ -12,4 +12,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: hello-gitops
+    app: ${{values.component_id}}

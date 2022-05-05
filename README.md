@@ -1,2 +1,3 @@
-# template-golang
-Go Template Repository
+# ${{values.component_id}}
+
+${{values.description}}
